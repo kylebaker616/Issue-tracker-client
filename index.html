@@ -12,6 +12,102 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h2 id="message"></h2>
+      <button id="sign-out" class="top-button" type="button">
+        Sign Out
+      </button>
+
+<body>
+  <form id="sign-in">
+    <div class="login">
+      <div class="login-screen">
+        <div class="app-title">
+          <h1>Sign In</h1>
+        </div>
+
+        <div class="login-form">
+          <div class="control-group">
+            <input type="email" class="login-field" value="" placeholder="Email" id="login-name"
+              name="credentials[email]">
+            <label class="login-field-icon fui-user" for="login-name"></label>
+          </div>
+
+          <div class="control-group">
+            <input type="password" class="login-field" value="" placeholder="password" id="login-pass"
+              name="credentials[password]">
+            <label class="login-field-icon fui-lock" for="login-pass"></label>
+          </div>
+
+          <input type="submit" class="btn btn-primary btn-large btn-block">
+          <!-- <a class="login-link" href="#">Don't have an account?</a> -->
+          <!-- <div class="no-account">New here?</div> <div class="no-account"><button>Create Account</button></div> -->
+          <div class="no-account">New here? <br>
+          Create Account</div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+    <form id="sign-up">
+      <div class="login">
+        <div class="login-screen">
+          <div class="app-title">
+            <h1>Sign Up </h1>
+          </div>
+
+          <div class="login-form">
+            <div class="control-group">
+              <input type="email" class="login-field" value="" placeholder="Email" id="login-name" name="credentials[email]">
+              <label class="login-field-icon fui-user" for="login-name"></label>
+            </div>
+
+            <div class="control-group">
+              <input type="password" class="login-field" value="" placeholder="password" id="login-pass" name="credentials[password]">
+              <label class="login-field-icon fui-lock" for="login-pass"></label>
+            </div>
+            <div class="control-group">
+              <input type="password" class="login-field" value="" placeholder="confirm password" id="login-confirm-pass" name="credentials[password_confirmation]">
+              <label class="login-field-icon fui-lock" for="login-confirm-pass"></label>
+            </div>
+
+            <input type="submit" class="btn btn-primary btn-large btn-block">
+            <!-- <a class="login-link" href="#">Don't have an account?</a> -->
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <button id="show-issues">Show Issues</button>
+
+    <!-- <container id="create-issue">
+      <form>
+        <form id="sign-in1">
+          <label for="sign-in-email">Email:</label>
+          <br>
+          <input type="email" name="credentials[email]" placeholder="Email">
+          <br>
+          <label>Password:</label>
+          <br>
+          <input type="password" name="credentials[password]" placeholder="password">
+          <input type="submit" value="Sign In">
+        </form> -->
+        <!-- <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div> -->
+      </form>
+    </container>
+<p id="issue-title"></p>
+<p id="issue-description"></p>
+<p id="issue-status"></p>
+
+</body>
+
+
     </body>
 </html>
