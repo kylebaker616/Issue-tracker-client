@@ -61,6 +61,7 @@ const onSignOutSuccess = function (response) {
   $('#show-issues').hide()
   $('.issue').hide()
   $('#create-issue-button').hide()
+  $('#change-password').hide()
 
   // $('.status').delay(5000).fadeOut(500)
 }
