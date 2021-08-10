@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Issue Tracker</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -13,11 +13,22 @@
     </head>
     <body>
       <h2 id="message"></h2>
-      <button id="sign-out" class="top-button" type="button">
-        Sign Out
-      </button>
+      <h2 id="change-pw-message"></h2>
 
-<body>
+
+
+
+
+
+
+<nav id="nav" class="navbar">
+  <form class="container-fluid justify-content-start">
+    <button class="btn btn-sm btn-outline-secondary" id="create-issue-button"type="button"> Open Issue</button>
+    <button class="btn btn-sm btn-outline-secondary" id="show-issues" type="button">Show Issues</button>
+  </form>
+</nav>
+
+
   <form id="sign-in">
     <div class="login">
       <div class="login-screen">
@@ -78,36 +89,94 @@
       </div>
     </form>
 
-    <button id="show-issues">Show Issues</button>
+    <!-- <button id="show-issues">Show Issues</button> -->
 
-    <!-- <container id="create-issue">
-      <form>
-        <form id="sign-in1">
-          <label for="sign-in-email">Email:</label>
-          <br>
-          <input type="email" name="credentials[email]" placeholder="Email">
-          <br>
-          <label>Password:</label>
-          <br>
-          <input type="password" name="credentials[password]" placeholder="password">
-          <input type="submit" value="Sign In">
-        </form> -->
-        <!-- <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+
+<div id="issue-title">
+
 </div>
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+<p id="get-issue-title">
+</p>
+
+<form id="change-password-form">
+  <div class="control-group">
+    <input type="password" class="login-field" value="" placeholder="Old Password" id="login-name" name="passwords[old]">
+    <label class="login-field-icon fui-user" for="login-name"></label>
+  </div>
+
+  <div class="control-group">
+    <input type="password" class="login-field" value="" placeholder="New password" id="login-pass"
+      name="passwords[new]">
+    <label class="login-field-icon fui-lock" for="login-pass"></label>
+  </div>
+<button type="submit">Change</button>
+</form>
+
+<div id="update-issue-div">
+  <h4>Update issue</h4>
+  <form id="update-issue">
+    <label for="title">Title:</label>
+    <br>
+    <input type="text" name="issue[title]">
+    <br>
+    <label>Description:</label>
+    <br>
+    <input type="text" name="issue[description]">
+    <br>
+    <label>Status:</label>
+    <br>
+    <input type="text" name="issue[status]">
+    <button type="submit">Update</button>
+  </form>
+</div>
+
+
+<!-- <button type="submit" id="create-issue-button">Open Issue</button> -->
+<div id="new-issue-div">
+  <h4 id="new-issue-header">Open a new issue:
+
+  </h4>
+  <hr>
+<form id="new-issue">
+  <label for="title">Title:</label>
+  <br>
+  <input type="text" name="issue[title]">
+  <br>
+  <label>Description:</label>
+  <br>
+  <input type="text" name="issue[description]">
+  <br>
+  <label>Status:</label>
+  <br>
+  <input type="text" name="issue[status]">
+  <button type="submit">Post</button>
+  <!-- <input type="submit" value="Post"> -->
+</form>
+</div>
+<!-- <div id="update-issue-div">
+  <h4>Update issue</h4>
+<form id="update-issue">
+  <label for="title">Title:</label>
+  <br>
+  <input type="text" name="issue[title]">
+  <br>
+  <label>Description:</label>
+  <br>
+  <input type="text" name="issue[description]">
+  <br>
+  <label>Status:</label>
+  <br>
+  <input type="text" name="issue[status]">
+  <button type="submit">Update</button>
+  <input type="submit" value="Post"> -->
+<!-- </form>
 </div> -->
-      </form>
-    </container>
-<p id="issue-title"></p>
-<p id="issue-description"></p>
-<p id="issue-status"></p>
-
-</body>
-
-
+<footer id="footer">
+      <button id="sign-out" class="account" type="button">
+        Sign Out
+      </button>
+      <button id="change-password" class="account" type="button">Change Password</button>
+</footer>
     </body>
 </html>

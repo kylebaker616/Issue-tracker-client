@@ -44,11 +44,45 @@ const onShowIssues = function () {
     .catch(ui.onShowIssuesFailure)
 }
 
+const onNewIssue = function (event) {
+  event.preventDefault()
+  // get info from event and form
+  const form = event.target
+  const data = getFormFields(form)
+  // make an API call using AJAX
+  api.newIssue(data)
+    .then(ui.onNewIssueSuccess)
+    .catch(ui.onNewIssueFailure)
+  // Handle a successful or failed call
+}
+
+const onUpdateIssue = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.updateIssue(data)
+    .then(ui.onUpdateIssueSuccess)
+    .catch(ui.onUpdateIssueFailure)
+}
+
+const onChangePassword = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  $('form').trigger('reset')
+  api.changePassword(data)
+    .then(ui.onChangePasswordSuccess)
+    .catch(ui.onSignInFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
+  onChangePassword,
   onCreateAccount,
-  onShowIssues
+  onShowIssues,
+  onNewIssue,
+  onUpdateIssue
 
 }
