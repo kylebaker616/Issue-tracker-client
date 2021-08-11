@@ -22,6 +22,6 @@ $(() => {
   $('#change-password-form').hide()
   $('#change-password').hide()
   $('#change-password').on('click', function () { $('#change-password-form').show() })
-  $('#create-issue-button').on('click', function () { $('#new-issue-div').show(); $('.issue').hide(); $('#show-issues').show(); $('#create-issue-button').hide() })
+  $('#create-issue-button').on('click', function () { $('#new-issue-div').show(); $('.issue').hide(); $('#show-issues').show(); $('#create-issue-button').hide(); $('#update-issue-div').hide() })
   $('#change-password-form').on('submit', authEvents.onChangePassword)
 })

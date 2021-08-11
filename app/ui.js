@@ -36,7 +36,7 @@ const onSignInSuccess = function (response) {
   $('#new-issue-div').show()
   $('#new-issue-header').show()
   $('#change-password').show()
-  $('#create-issue-button').show()
+  // $('#create-issue-button').show()
 
   // $('#change-password').show()
   // &('.home-page-container').show
@@ -62,6 +62,8 @@ const onSignOutSuccess = function (response) {
   $('.issue').hide()
   $('#create-issue-button').hide()
   $('#change-password').hide()
+  $('#sign-up-title').show()
+  $('.no-account').show()
 
   // $('.status').delay(5000).fadeOut(500)
 }
@@ -172,10 +174,14 @@ const onUpdateIssueSuccess = function () {
 
 const onUpdateIssueFailure = function () {
   $('#message').text('Failed to update issue')
+  $('#message').show()
+  $('#message').delay(3000).hide(500)
 }
 
 const onDeleteIssueSuccess = function () {
   $('#message').text('Issue has been deleted')
+  $('#message').show()
+  $('#message').delay(3000).hide(500)
   api.showIssues()
     .then(onShowIssuesSuccess)
 }
@@ -183,6 +189,7 @@ const onDeleteIssueSuccess = function () {
 const onDeleteIssueFailure = function () {
   $('#message').text('You are not authorized to delete this issue')
   $('#message').show()
+  $('#message').delay(3000).hide(500)
 }
 
 const onGetIssueSuccess = function (response) {

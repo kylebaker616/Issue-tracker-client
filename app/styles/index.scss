@@ -123,3 +123,25 @@ button {
   background-color: #3498DB;
 
 }
+.form-header {
+margin-left:auto;
+    margin-right:auto;
+    height:auto;
+    width:auto;
+}
+#new-issue-div {
+    display: flex;
+  justify-content: space-between;
+  max-width: 400px;
+  margin: 0 auto;
+
+  padding: 10px 0;
+}
+#update-issue-div {
+    display: flex;
+  justify-content: space-between;
+  max-width: 400px;
+  margin: 0 auto;
+
+  padding: 10px 0;
+}
