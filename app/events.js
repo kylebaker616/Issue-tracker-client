@@ -49,6 +49,7 @@ const onNewIssue = function (event) {
   // get info from event and form
   const form = event.target
   const data = getFormFields(form)
+  $('form').trigger('reset')
   // make an API call using AJAX
   api.newIssue(data)
     .then(ui.onNewIssueSuccess)

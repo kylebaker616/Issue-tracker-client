@@ -194,6 +194,8 @@ const onDeleteIssueFailure = function () {
 
 const onGetIssueSuccess = function (response) {
   console.log(response.issue)
+  $('#get-issue-title').show()
+
   const issue = response.issue
   $('#get-issue-title').html(`<h4 class="issue1">Title: ${issue.title}</h4>
    <p class="issue1">Description: ${issue.description}</p>
