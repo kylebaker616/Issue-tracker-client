@@ -74,7 +74,7 @@ const onChangePassword = function (event) {
   $('form').trigger('reset')
   api.changePassword(data)
     .then(ui.onChangePasswordSuccess)
-    .catch(ui.onSignInFailure)
+    .catch(ui.onChangePasswordFailure)
 }
 
 module.exports = {

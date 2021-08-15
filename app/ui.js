@@ -1,26 +1,25 @@
 'use strict'
 const store = require('./store')
 
-// may remove LATER
-const getFormFields = require('../lib/get-form-fields')
 const api = require('./api')
 
 const onSignUpSuccess = function (response) {
-  console.log('in then')
+  // console.log('in then')
   $('#message').show()
   $('#message').text(`Thank you for signing up ${response.user.email}`)
   $('#sign-up').trigger('reset')
   $('#sign-up').delay(1000).hide(500)
   $('#sign-in').delay(1050).show(100)
+  $('.no-account').show()
 }
 
 const onSignUpFailure = function (response) {
-  console.log('in catch')
+  // console.log('in catch')
   $('#message').text('Sign up failed')
   $('#sign-up').trigger('reset')
 }
 const onSignInSuccess = function (response) {
-  console.log('in then')
+  // console.log('in then')
   $('#message').text(`Now signed in as ${response.user.email}`)
   $('#message').show()
   $('#message').delay(3000).hide(500)
@@ -43,7 +42,7 @@ const onSignInSuccess = function (response) {
 }
 
 const onSignInFailure = function (response) {
-  console.log('in catch')
+  // console.log(response)
   $('#message').text(
     'Sign in failed, please enter a valid Email and password.'
   )
@@ -51,7 +50,7 @@ const onSignInFailure = function (response) {
 }
 
 const onSignOutSuccess = function (response) {
-  console.log('in then')
+  // console.log('in then')
   $('#message').text('Signed Out')
   $('#sign-in').show()
   $('#sign-out').hide()
@@ -64,22 +63,28 @@ const onSignOutSuccess = function (response) {
   $('#change-password').hide()
   $('#sign-up-title').show()
   $('.no-account').show()
+  $('#change-password-form').hide()
+  $('#change-password').hide()
 
   // $('.status').delay(5000).fadeOut(500)
 }
 
 const onSignOutFailure = function (response) {
-  console.log('in catch')
+  // console.log('in catch')
   $('#message').text('Sign Out Failed')
 }
 
 const onChangePasswordSuccess = function (response) {
-  $('#change-pw-message').text('Password changed, please sign in using your new password')
+  $('#change-pw-message').text('Password changed')
   $('#change-pw-message').delay(5000).hide(500)
   $('#change-password-form').hide()
-  $('#change-password').hide()
-  api.signOut()
-    .then(onSignOutSuccess)
+  // $('#change-password').hide()
+}
+
+const onChangePasswordFailure = function (response) {
+  $('#message').show()
+  $('#message').text('Password change failed')
+  $('#message').delay(5000).hide(500)
 }
 
 const onShowIssuesSuccess = function (response) {
@@ -89,11 +94,11 @@ const onShowIssuesSuccess = function (response) {
   $('#create-issue-button').show()
   $('#show-issues').hide()
   $('#get-issue-title').hide()
-  console.log(response.issues)
+  // console.log(response.issues)
   const issue = response.issues
   issue.forEach(issue => {
     store.id = issue._id
-    console.log(store.id)
+    // console.log(store.id)
   })
 
   let issuesHtml = ''
@@ -124,11 +129,11 @@ const onShowIssuesSuccess = function (response) {
     $('#update-issue-div').show()
     $('#show-issues').show()
     $('#get-issue-title').show()
-    console.log('hello')
+    // console.log('hello')
     $('#update-issue').show()
-    console.log($(event.target).data('id'))
+    // console.log($(event.target).data('id'))
     store.id = $(event.target).data('id')
-    console.log(store.id)
+    // console.log(store.id)
     api.getIssue(store.id)
       .then((response) => {
         return response
@@ -147,7 +152,7 @@ const onShowIssuesSuccess = function (response) {
 }
 
 const onNewIssueSuccess = function (response) {
-  console.log(response)
+  // console.log(response)
   store.id = response.issue._id
   $('#message').text('Issue Created')
   api.getIssue()
@@ -193,7 +198,7 @@ const onDeleteIssueFailure = function () {
 }
 
 const onGetIssueSuccess = function (response) {
-  console.log(response.issue)
+  // console.log(response.issue)
   $('#get-issue-title').show()
 
   const issue = response.issue
@@ -217,7 +222,7 @@ module.exports = {
   onSignInSuccess,
   onSignInFailure,
   onChangePasswordSuccess,
-  // onChangePasswordFailure,
+  onChangePasswordFailure,
   onSignOutSuccess,
   onSignOutFailure,
   onShowIssuesSuccess,
