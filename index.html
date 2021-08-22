@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Issue Tracker</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h2 id="message"></h2>
+      <h2 id="change-pw-message"></h2>
+
+
+
+
+
+
+
+<nav id="nav" class="navbar">
+  <form class="container-fluid justify-content-start">
+    <button class="btn btn-sm btn-outline-secondary" id="create-issue-button"type="button"> Open Issue</button>
+    <button class="btn btn-sm btn-outline-secondary" id="show-issues" type="button">Show Issues</button>
+  </form>
+</nav>
+
+
+  <form id="sign-in">
+    <div class="login">
+      <div class="login-screen">
+        <div class="app-title">
+          <h1>Sign In</h1>
+        </div>
+
+        <div class="login-form">
+          <div class="control-group">
+            <input type="email" class="login-field" value="" placeholder="Email" id="login-name"
+              name="credentials[email]">
+            <label class="login-field-icon fui-user" for="login-name"></label>
+          </div>
+
+          <div class="control-group">
+            <input type="password" class="login-field" value="" placeholder="password" id="login-pass"
+              name="credentials[password]">
+            <label class="login-field-icon fui-lock" for="login-pass"></label>
+          </div>
+
+          <input type="submit" class="btn btn-primary btn-large btn-block">
+          <!-- <a class="login-link" href="#">Don't have an account?</a> -->
+          <!-- <div class="no-account">New here?</div> <div class="no-account"><button>Create Account</button></div> -->
+          <div class="no-account">New here? <br>
+          Create Account</div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+    <form id="sign-up">
+      <div class="login">
+        <div class="login-screen">
+          <div class="app-title">
+            <h1>Sign Up </h1>
+          </div>
+
+          <div class="login-form">
+            <div class="control-group">
+              <input type="email" class="login-field" value="" placeholder="Email" id="login-name" name="credentials[email]">
+              <label class="login-field-icon fui-user" for="login-name"></label>
+            </div>
+
+            <div class="control-group">
+              <input type="password" class="login-field" value="" placeholder="password" id="login-pass" name="credentials[password]">
+              <label class="login-field-icon fui-lock" for="login-pass"></label>
+            </div>
+            <div class="control-group">
+              <input type="password" class="login-field" value="" placeholder="confirm password" id="login-confirm-pass" name="credentials[password_confirmation]">
+              <label class="login-field-icon fui-lock" for="login-confirm-pass"></label>
+            </div>
+
+            <input type="submit" class="btn btn-primary btn-large btn-block">
+            <div class="has-account">Already signed up? <br>
+              Back to sign in</div>
+            <!-- <a class="login-link" href="#">Don't have an account?</a> -->
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- <button id="show-issues">Show Issues</button> -->
+
+
+<div id="issue-title">
+
+</div>
+
+<p id="get-issue-title">
+</p>
+
+<form id="change-password-form">
+  <div class="control-group">
+    <input type="password" class="login-field" value="" placeholder="Old Password" id="login-name" name="passwords[old]">
+    <label class="login-field-icon fui-user" for="login-name"></label>
+  </div>
+
+  <div class="control-group">
+    <input type="password" class="login-field" value="" placeholder="New password" id="login-pass"
+      name="passwords[new]">
+    <label class="login-field-icon fui-lock" for="login-pass"></label>
+  </div>
+<button type="submit">Change</button>
+</form>
+
+<div id="update-issue-div">
+<div><h4 class="form-header">Update issue: </h4></div>
+  <form id="update-issue">
+    <label for="title">Title:</label>
+    <br>
+    <input type="text" name="issue[title]">
+    <br>
+    <label>Description:</label>
+    <br>
+    <input type="text" name="issue[description]">
+    <br>
+    <label>Status:</label>
+    <br>
+    <input type="text" name="issue[status]">
+    <button type="submit">Update</button>
+  </form>
+</div>
+
+
+<!-- <button type="submit" id="create-issue-button">Open Issue</button> -->
+<div id="new-issue-div">
+ <div> <h4 class="form-header" id="new-issue-header">Open a new issue:
+
+  </h4>
+ </div>
+  <br>
+<form id="new-issue">
+  <label for="title">Title:</label>
+  <br>
+  <input type="text" name="issue[title]">
+  <br>
+  <label>Description:</label>
+  <br>
+  <input type="text" name="issue[description]">
+  <br>
+  <label>Status:</label>
+  <br>
+  <input type="text" name="issue[status]">
+  <button type="submit">Post</button>
+  <!-- <input type="submit" value="Post"> -->
+</form>
+</div>
+<!-- <div id="update-issue-div">
+  <h4>Update issue</h4>
+<form id="update-issue">
+  <label for="title">Title:</label>
+  <br>
+  <input type="text" name="issue[title]">
+  <br>
+  <label>Description:</label>
+  <br>
+  <input type="text" name="issue[description]">
+  <br>
+  <label>Status:</label>
+  <br>
+  <input type="text" name="issue[status]">
+  <button type="submit">Update</button>
+  <input type="submit" value="Post"> -->
+<!-- </form>
+</div> -->
+<footer id="footer">
+      <button id="sign-out" class="account" type="button">
+        Sign Out
+      </button>
+      <button id="change-password" class="account" type="button">Change Password</button>
+</footer>
+    </body>
+</html>

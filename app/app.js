@@ -1,0 +1,28 @@
+// use require with a reference to bundle the file and use it in this file
+// const example = require('./example')
+const authEvents = require('./events')
+// use require without a reference to ensure a file is bundled
+// require('./example')
+
+$(() => {
+  $('#sign-up').on('submit', authEvents.onSignUp)
+  $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#sign-out').on('click', authEvents.onSignOut)
+  $('#sign-out').hide()
+  $('#sign-up').hide()
+  $('.no-account').on('click', authEvents.onCreateAccount)
+  $('.has-account').on('click', function () { $('#sign-up').hide(); $('#sign-in').show(); $('.no-account').show() })
+  $('#show-issues').hide()
+  $('#show-issues').on('click', authEvents.onShowIssues)
+  $('#create-issue-button').hide()
+  $('#new-issue-div').hide()
+  $('#new-issue').on('submit', authEvents.onNewIssue)
+  $('#update-issue-div').hide()
+  $('#update-issue').on('submit', authEvents.onUpdateIssue)
+  $('#new-issue-header').hide()
+  $('#change-password-form').hide()
+  $('#change-password').hide()
+  $('#change-password').on('click', function () { $('#change-password-form').show(); $('#change-password-form').delay(35000).hide(500) })
+  $('#create-issue-button').on('click', function () { $('#new-issue-div').show(); $('.issue').hide(); $('#show-issues').show(); $('#create-issue-button').hide(); $('#update-issue-div').hide() })
+  $('#change-password-form').on('submit', authEvents.onChangePassword)
+})
